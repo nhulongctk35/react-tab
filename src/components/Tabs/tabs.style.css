@@ -1,0 +1,52 @@
+.tabs__labels {
+    list-style: none;
+    background: #f4f9fa;
+    color: #757575;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+}
+
+.tabs__content {
+    padding: 0 12px;
+    opacity: 0;
+    position: absolute;
+    right: -1000px;
+}
+
+@keyframes slide-in {
+    100% {
+        right: 0px;
+    }
+}
+
+.tabs__content--active {
+    position: relative;
+    opacity: 1;
+    animation: slide-in 0.9s forwards;
+}
+
+.tabs__label > button {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 18px 12px;
+    width: 100%;
+    text-align: left;
+    border: 0;
+    background: transparent;
+    transition: all linear .9s;
+}
+
+.tabs__label > button:focus {
+    outline: none;
+}
+
+.tabs__label--active {
+    box-shadow: inset 0 2px #0CE;
+}
+
+.tabs__label--active > button {
+    color: #0CE;
+}
